@@ -1,0 +1,37 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 01/03/2017, Time: 21:30:01.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*         [ Checking For Palindrome Strings, Exercise 2 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* Mobile: - -
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>New Web Page</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = checkPalindrome( prompt( 'Type in any data string' ) ) 
+
+    function checkPalindrome( data ) {
+      var aux = '\'' + data + '\' '
+      data = data.replace( /[`~!@#$%^&*()_|+\-=?;:'",.<> \{\}\[\]\\\/]/gi, '' ).toLowerCase()
+      return data == data.split( '' ).reverse().join( '' ) ? aux + ' is a palindrome' : aux + ' isnt :(' 
+    }
+  </script>
+</html>
