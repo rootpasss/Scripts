@@ -1,0 +1,44 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 02/03/2017, Time: 22:56:48.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*         [ Find The Longest Word In Any String, Exercise 6 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* Mobile: - -
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>New Web Page</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = longestWord( prompt( 'Type in any data' ) )
+
+    function longestWord( data ) {
+      var array = data.split( ' ' )
+      var longest = ''
+
+      for( var i = 0; i < array.length; i++ ) {
+        if( array[ i ].length > longest.length ) {
+          longest = array[ i ]
+        }
+      }
+
+      return data + '<br>Longest Word: ' + longest + ' [' + longest.length + ' chars]'
+    }
+  </script>
+</html>
