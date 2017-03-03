@@ -30,13 +30,13 @@
 
     function capitalize( data ) {
       var array = data.split( ' ' ) 
-      var result = ''
+      var capitalized = ''
 
       for( var i = 0; i < array.length; i++ ) {
-        result += array[ i ][ 0 ].toUpperCase() + array[ i ].substring( 1 ) + ' ' 
+        capitalized += array[ i ][ 0 ].toUpperCase() + array[ i ].substring( 1 ) + ' ' 
       }
 
-      return result
+      return capitalized
     }
   </script>
 </html>
