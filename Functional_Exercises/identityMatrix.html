@@ -1,0 +1,52 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 04/03/2017, Time: 00:56:54.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*         [ Print Identity Matrix, Exercise 10 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* Mobile: - -
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>New Web Page</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = printMatrix( prompt( 'Type in matrix size' ) )
+
+    function printMatrix( size ) {
+      var array = [], row = [] 
+      var result = ''
+
+      for( var i = 0; i < size; i++ ) {
+        for( var j = 0; j < size; j++ ) {
+          if( i == j ) {
+            row.push( 1 + ' ' )
+            } else {
+            row.push( 0 + ' ' )
+          }
+        }
+
+        array.push( row.join( '' ) )
+        result += array[ i ] + '<br>' 
+        row = []
+      }
+
+      return 'Identity Matrix Size ' + size + ':<br><br>' + result 
+    }
+  </script>
+</html>
