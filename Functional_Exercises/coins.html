@@ -1,0 +1,46 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 06/03/2017, Time: 00:35:58.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*         [ Amount To Coins Equivalent, Exercise 14 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* Mobile: - -
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>New Web Page</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = calculateAmount( prompt( 'Type in any amount' ), [ 25, 10, 5, 2, 1 ] )
+
+    function calculateAmount( amount, coins ) {
+      var count = 0, picker = 0, values = ''
+
+      while( count < amount ) {
+        if( count + coins[ picker ] <= amount ) {
+          count += coins[ picker ]
+          values += coins[ picker ] + ' ' 
+        } else {
+          picker ++
+        }
+      }
+
+      return 'Amount ' + amount + '  ---> Coins: ' + values
+    }
+  </script>
+</html>
