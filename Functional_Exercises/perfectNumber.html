@@ -1,0 +1,51 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 05/03/2017, Time: 22:05:30.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*         [ First n Perfect Values, Exercise 12 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* Mobile: - -
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>New Web Page</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = perfect( prompt( 'Type in any value' ) )
+
+    function perfect( value ) {
+      var perfectValues = '' 
+
+      for( var i = 1; i <= value; i++ ) {
+        var add = 0
+
+        for( var j = 1; j < i; j++ ) {
+          if( i % j == 0 ) {
+            add += j
+          }
+        }
+
+        if( i == add ) {
+          perfectValues += i + ' '
+        }
+      }
+
+      return perfectValues
+    }
+  </script>
+</html>
