@@ -1,0 +1,61 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 09/03/2017, Time: 01:14:13.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*         [ Elements Larger Than a Given Value, Exercise 19 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* Mobile: - -
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>New Web Page</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var array = [], result = []
+    var output = document.querySelector( '.output' )
+    var input = document.createElement( 'input' )
+    input.setAttribute( 'type', 'text' )
+    input.setAttribute( 'placeholder', 'Value to compare...' )
+    input.setAttribute( 'autofocus' )
+    document.body.appendChild( input )
+
+
+    for( var i = 0; i < 30; i++ ) {
+      array.push( Math.floor( Math.random() * 90 ) )
+    }
+
+    array.sort( function( x, y ) { return x - y } )
+    output.innerHTML = array.join( ', ' )
+
+    input.addEventListener( 'keyup', function() {
+      if( event.keyCode == 13 ) {
+        output.innerHTML += getLarger( input.value, array )
+        input.select()
+      }
+    } )
+
+    function getLarger( dataKey, dataList ) {
+      for( var i = 0; i < dataList.length; i++ ) {
+        if( dataKey < dataList[ i ] ) {
+          result.push( dataList[ i ] )
+        }
+      }
+
+      return '<br>Values larger than ' + dataKey + ': ' + result.join( ', ' ) 
+    }
+  </script>
+</html>
