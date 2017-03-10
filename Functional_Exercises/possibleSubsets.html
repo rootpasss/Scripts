@@ -1,0 +1,53 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 09/03/2017, Time: 22:19:33.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*         [ All Possible Subsets, Exercise 21 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* Mobile: - -
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>All Possible Subsets</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = subset( [ 1, 2, 3 ], 2 )
+
+    // Provided solution by w3resource.com, [I dont like this crap]
+    function subset( arra, arra_size ) {
+      var result_set = [], result;
+      
+      for( var x = 0; x < Math.pow(2, arra.length); x++ ) {
+        result = [];
+        i = arra.length - 1; 
+        
+        do {
+          if( ( x & ( 1 << i ) ) !== 0 ) {
+            result.push(arra[i]);
+          }
+        } while( i-- );
+
+        if( result.length >= arra_size ) {
+          result_set.push(result);
+        }
+      }
+
+      return result_set; 
+    }
+  </script>
+</html>
