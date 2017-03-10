@@ -1,0 +1,52 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 09/03/2017, Time: 22:33:38.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*         [ Find Letter Occurrences Within a String, Exercise 22 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* Mobile: - -
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Letter Occurrences</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+    <input class="input" type="text" onkeyup="find()" placeholder="Letter to find..." autofocus>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = 'The quick brown fox jumps over the lazy dog'
+    var input = document.querySelector( '.input' )
+
+    function find() {
+      if( event.keyCode == 13 && input.value.length > 0 ) {
+        output.innerHTML += occurrences( input.value, output.innerHTML )
+        input.select()
+      }
+    }
+
+    function occurrences( dataKey, dataString ) {
+      var letterCounter = 0
+
+      for( var i = 0; i < dataString.length; i++ ) {
+        if( dataKey == dataString.substring( i, i + 1 ) ) {
+          letterCounter ++
+        }
+      }
+
+      return '<br><br>Letter \'' + dataKey + '\' was found ' + letterCounter + ' times within the string'
+    }
+  </script>
+</html>
