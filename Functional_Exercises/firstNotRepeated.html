@@ -1,0 +1,50 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 10/03/2017, Time: 22:11:02.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*         [ First Not Repeated Character, Exercise 23 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* Mobile: - -
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Find First Not Repeated Character</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = notRepeated( prompt( 'Type in any data string' ).toUpperCase() )
+
+    // Deleting duplicated items
+    function notRepeated( textLine ) {
+      var array = textLine.split( '' )
+
+      for( var i = 0; i < array.length - 1; i++ ) {
+        var letter = array[ i ]
+
+        for( var j = i + 1; j < array.length; j++ ) {
+          if( letter == array[ j ] ) {
+            array.splice( i, 1 )
+            array.splice( j - 1, 1 )
+            i --
+          }
+        }
+      }
+
+      return array.length > 0 ? textLine + '<br><br>First not repeated character: \'' + array[ 0 ] + '\'' : textLine + '<br><br>All Repeated'
+    }
+  </script>
+</html>
