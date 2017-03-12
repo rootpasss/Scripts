@@ -1,0 +1,64 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 11/03/2017, Time: 20:24:09.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*         [ Longest Substring Without Repeating Chars, Exercise 26 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* Mobile: - -
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Longest Substring</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = longest_substring_without_repeating_characters( 'google.com' )
+    
+    // Solution provided by w3resource.com, [ I dont like this crap ]
+    function longest_substring_without_repeating_characters(input) {
+      var chars = input.split('');
+      var curr_char;
+      var str = "";
+      var longest_string = "";
+      var hash = {};
+      
+      for( var i = 0; i < chars.length; i++ ) {
+        curr_char = chars[i];
+        
+        if( !hash[chars[i]] ) { 
+          str += curr_char; 
+          hash[chars[i]] = {index:i};
+        } else {
+          if(longest_string.length <= str.length) {
+            longest_string = str;
+          }
+          
+          var prev_dupeIndex = hash[curr_char].index;
+          var str_FromPrevDupe = input.substring(prev_dupeIndex + 1, i);
+          str = str_FromPrevDupe + curr_char;
+          hash = {};
+      
+          for( var j = prev_dupeIndex + 1; j <= i; j++ ) {
+            hash[input.charAt(j)] = {index:j};
+          }
+        }
+      }
+
+      return longest_string.length > str.length ? longest_string : str;
+    }
+  </script>
+</html>
