@@ -1,0 +1,67 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 11/03/2017, Time: 20:32:25.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*         [ Longest Palindrome, Exercise 27 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* Mobile: - -
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>New Web Page</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' ).innerHTML = 'See result in console'
+    console.log( longest_palindrome("abracadabra") );
+    console.log( longest_palindrome("HYTBCABADEFGHABCDEDCBAGHTFYW12345678987654321ZWETYGDE") );
+
+    // provided solution by w3resource.com, [ I dont like this crap!! ]
+    function is_Palindrome(str1) {
+      var rev = str1.split("").reverse().join("");
+      return str1 == rev;
+    }
+
+    function longest_palindrome(str1){
+
+    var max_length = 0,
+    maxp = '';
+
+    for(var i=0; i < str1.length; i++) 
+    {
+      var subs = str1.substr(i, str1.length);
+
+      for(var j=subs.length; j>=0; j--) 
+      {
+        var sub_subs_str = subs.substr(0, j);
+        if (sub_subs_str.length <= 1)
+          continue;
+
+        if (is_Palindrome(sub_subs_str))
+        {
+          if (sub_subs_str.length > max_length) 
+          {
+            max_length = sub_subs_str.length;
+            maxp = sub_subs_str;
+          }
+        }
+      }
+    }
+
+      return maxp;
+    }
+  </script>
+</html>
