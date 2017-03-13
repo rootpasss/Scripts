@@ -1,0 +1,39 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 12/03/2017, Time: 18:09:48.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*         [ Pass a Function as Parameter, Exercise 28 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* Mobile: - -
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Pass Function as Parameter</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = showMessage( myMessage )
+
+    function myMessage() {
+      return 'Noob Web Developer!! [from \'' + myMessage.name + '\' function]'
+    }
+
+    function showMessage( functionParam ) {
+      return functionParam()
+    }
+  </script>
+</html>
