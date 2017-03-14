@@ -1,0 +1,42 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 13/03/2017, Time: 23:59:16.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Get Two Integers And Show The Largest Value, Exercise 1 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* Mobile: - -
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Get Two Integers & Show The Largest</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var num1 = Math.floor( Math.random() * 300 )
+    var num2 = Math.floor( Math.random() * 300 )
+
+    output.innerHTML = num1 + ' & ' + num2 + '<br><br>' + major( num1, num2 )
+
+    function major( x, y ) {
+      if( x == y ) {
+        return x + ' and ' + y + ' are equals'
+      }
+
+      return x > y ? 'Greatest Value: ' + x : 'Greatest Value: ' + y
+    }
+  </script>
+</html>
