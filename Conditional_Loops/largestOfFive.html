@@ -1,0 +1,41 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 15/03/2017, Time: 00:59:49.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Find The Largest Of Five Integers, Exercise 4 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* Mobile: - -
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Largest Of Five Integers</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var values = []
+
+    for( var i = 0; i < 5; i++ ) {
+      values.push( Math.floor( Math.random() * 20 ) )
+    }
+
+    output.innerHTML = values.join( ', ' ) + '<br>Largest Value: ' + getLargest( values )
+
+    function getLargest( dataList ) {
+      return dataList.sort( function( x, y ) { return y - x } ) [ 0 ]
+    }
+  </script>
+</html>
