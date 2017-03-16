@@ -1,0 +1,47 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 16/03/2017, Time: 00:35:10.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Odd Or Even, Exercise 5 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* Mobile: - -
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Odd Or Even</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var values = []
+
+    for( var i = 0; i < 15; i++ ) {
+      values.push( Math.floor( Math.random() * 125 ) )
+    }
+
+    output.innerHTML = oddEven( values )
+
+    function oddEven( dataList ) {
+      var result = ""
+
+      for( var i in dataList ) {
+        result += dataList[ i ] % 2 == 0 ? dataList[ i ] + ': is even<br>' : dataList[ i ] + ': is odd<br>'
+      }
+
+      return result
+    }
+  </script>
+</html>
