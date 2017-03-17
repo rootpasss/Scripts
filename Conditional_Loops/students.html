@@ -1,0 +1,110 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 16/03/2017, Time: 13:18:06.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Students Grades, Exercise 6 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* Mobile: - -
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Students Grades</title>
+  </head>
+  <body>
+    <table class="sampleTable">
+      <thead>
+        <th>Range</th>
+        <th>Grade</th>
+      </thead>
+      <tbody class="sampleData">
+        <tr>
+          <td>&lt60</td>
+          <td>F</td>
+        </tr>
+        <tr>
+          <td>&lt70</td>
+          <td>D</td>
+        </tr>
+        <tr>
+          <td>&lt80</td>
+          <td>C</td>
+        </tr>
+        <tr>
+          <td>&lt90</td>
+          <td>B</td>
+        </tr>
+        <tr>
+          <td>&lt100</td>
+          <td>A</td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table">
+      <thead>
+        <th>Student Name</th>
+        <th>Marks</th>
+        <th>Grade</th>
+      </thead>
+      <tbody class="data">
+      </tbody>
+    </table>
+  </body>
+  <script>
+    var mainTable = document.querySelector( '.table' )
+    var mainData = document.querySelector( '.data' )
+    var size = mainData.children.length
+    var students = [ 'Kirill', 'Pamela', 'Marie', 'Nicky', 'Jason' ]
+    var sampleTable = document.querySelector( '.sampleTable' )
+    sampleTable.style.border = '1px solid black'
+    sampleTable.style.marginBottom = '40px'
+
+    fill()
+
+    function fill() {
+      mainTable.style.border = '1px solid black'
+
+      for( var i = size; i < size + 5; i++ ) {
+        var tr = document.createElement( 'tr' )
+        var td = document.createElement( 'td' )
+        td.appendChild( document.createTextNode( students[ i ] ) )
+        tr.appendChild( td )
+
+        td = document.createElement( 'td' )
+        var grade = 10 + Math.floor( Math.random() * 90 )
+        td.appendChild( document.createTextNode( grade ) )
+        tr.appendChild( td )
+
+        td = document.createElement( 'td' )
+        td.appendChild( document.createTextNode( computeGrade( grade ) ) )
+        tr.appendChild( td )
+          
+        mainData.appendChild( tr )
+      }
+    }
+
+    function computeGrade( average ) {
+      if( average <= 60 ) {
+        return 'F'
+      } else if( average <= 70 ) {
+        return 'D'
+      } else if( average <= 80 ) {
+        return 'C'
+      } else if( average <= 90 ) {
+        return 'B'
+      } else {
+        return 'A'
+      }
+    }
+  </script>
+</html>
