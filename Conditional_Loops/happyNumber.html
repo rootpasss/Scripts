@@ -1,0 +1,93 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 17/03/2017, Time: 18:54:03.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Happy Numbers, Exercise 8 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Happy Numbers</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = happy5()
+    // output.innerHTML = happyNumber( prompt( 'Type in any number' ) )
+  
+    // INFO: happy5() show the first 5 happy numbers
+    // INFO: happyNumbers( n ) prompts for an integer value and tell if its a Happy Number
+    function happy5() {
+      var happyNumbers = []
+      var i = 1
+
+      while( happyNumbers.length < 5 ) {
+        var preventInfinite = 0
+        var aux = i
+
+        if( aux.toString().length == 1 ) {
+          aux *= 10
+        }
+
+        while( aux != 1 && preventInfinite < 9 ) {
+          var result = 0
+
+          for( var j = aux.toString().length; j > 0; j-- ) {
+            result += Math.pow( aux % 10, 2 )
+            aux = parseInt( aux / 10 )
+          }
+
+          aux = result
+          preventInfinite ++
+        }
+
+        if( aux == 1 ) {
+          happyNumbers.push( i )
+        }
+
+        i ++
+      }
+
+      return happyNumbers.join( ', ' )
+    }
+
+    function happyNumber( value ) {
+      var preventInfinite = 0, aux = value
+      var info = '<br><br>'
+
+      if( value.toString().length == 1 ) {
+        value *= 10
+      }
+
+      while( value != 1 && preventInfinite < 9 ) {
+        var result = 0
+
+        for( var i = value.toString().length; i > 0; i-- ) {
+          result += Math.pow( value % 10, 2 )
+          value = parseInt( value / 10 )
+        }
+
+        value = result
+        preventInfinite ++
+        info += '[' + value + ']<br>'
+      }
+      
+      info += 'Total Iterations: ' + preventInfinite
+      return value == 1 ? aux + ' Is a Happy Number!' + info : aux + ' Is a Sad Number :(' + info
+    }
+  </script>
+</html>
