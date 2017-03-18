@@ -1,0 +1,48 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 16/03/2017, Time: 21:14:42.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Fizz Buzz, Exercise 7 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* Mobile: - -
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Fizz Buzz</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+
+    fizzBuzz( 100 )
+
+    function fizzBuzz( length ) {
+      for( var i = 1; i <= length; i++ ) {
+        var result = i
+
+        if( i % 3 == i % 5 ) {
+          result = 'FizzBuzz'
+        } else if( i % 3 == 0 ) {
+          result = 'Fizz'
+        } else if( i % 5 == 0 ) {
+          result = 'Buzz'
+        }
+
+        output.innerHTML += result + '<br>'
+      }
+    }
+  </script>
+</html>
