@@ -1,0 +1,69 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 18/03/2017, Time: 15:58:24.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Armstrong Numbers, Exercise 9 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Armstrong Numbers</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )    
+    output.innerHTML = armstrongNumbers()
+    // output.innerHTML = armstrong( prompt( 'Type in any 3 digits number' ) )
+
+    // INFO: armstrongNumbers() show the first 20 armstrong values
+    // INFO: armstrong( n ) prompts for an integer value and tell if its an Armstrong Number
+    function armstrongNumbers() {
+      var values = []
+      var size = 20, i = 0
+
+      while( values.length < size ) {
+        var result = 0, valueCopy = i
+        var power = valueCopy.toString().length
+
+        while( valueCopy > 0 ) {
+          result += Math.pow( parseInt( valueCopy % 10 ), power )
+          valueCopy = parseInt( valueCopy / 10 )
+        }
+
+        if( i == result ) {
+          values.push( i )
+        }
+
+        i ++
+      }
+
+      return 'First ' + size + ' armstrong numbers: ' + values.join( ', ' )
+    }
+
+    function armstrong( value ) {
+      var result = 0, valueCopy = value
+      var power = value.toString().length
+
+      while( valueCopy > 0 ) {
+        result += Math.pow( parseInt( valueCopy % 10 ), power )
+        valueCopy = parseInt( valueCopy / 10 )
+      }
+
+      return value == result ? value + ' is an Armstrong Number!' : value + ' is very weak :('
+    }
+  </script>
+</html>
