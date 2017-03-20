@@ -1,0 +1,41 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 18/03/2017, Time: 16:03:25.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Triangle Pattern, Exercise 10 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Triangle Pattern</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    printPattern( prompt( 'Pattern Size' ) )
+
+    function printPattern( size ) {
+      for( var i = 0; i <= size; i++ ) {
+        for( var j = 0; j < i; j++ ) {
+          output.innerHTML += '* '
+        }
+
+        output.innerHTML += '<br>'
+      }
+    }
+  </script>
+</html>
