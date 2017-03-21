@@ -1,0 +1,56 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 18/03/2017, Time: 16:12:40.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Greatest Common Divisor, Exercise 11 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Greatest Common Divisor</title>
+  </head>
+  <body>
+    <input class="number1" type="number" onkeyup="manageTask()" oninput="clean()" placeholder="First Number" autofocus>
+    <input class="number2" type="number" onkeyup="manageTask()" oninput="clean()" placeholder="Second Number">
+    <input class="run" type="button" value="Calculate GCD" onclick="output.innerHTML = GCD( n1.value, n2.value )" style="display: none;">
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var n1 = document.querySelector( '.number1' )
+    var n2 = document.querySelector( '.number2' )
+    var run = document.querySelector( '.run' )
+
+    function manageTask() {
+      if( event.keyCode == 13 && n1.value.length > 0 && n2.value.length > 0 ) {
+        output.innerHTML = GCD( n1.value, n2.value )
+      }
+
+      run.style.display = n1.value.length > 0 && n2.value.length > 0 ? 'block' : 'none'
+    }
+
+    function GCD( x, y ) {
+      if( ! y ) {
+        return 'GCD of ' + n1.value + ' & ' + n2.value + ' = ' + x
+      }
+
+      return GCD( y, x % y )
+    }
+
+    function clean() {
+      output.innerHTML = ''
+    }
+  </script>
+</html>
