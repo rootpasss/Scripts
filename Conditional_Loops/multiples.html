@@ -1,0 +1,47 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 18/03/2017, Time: 16:52:12.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Multiples Of 3 & 5 Under 1000, Exercise 12 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Multiples Of 3 And 5</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = multiples()
+
+    function multiples() {
+      var M3 = [], M5 = []
+
+      for( var i = 1; i <= 1000; i++ ) {
+        if( i % 3 == 0 ) {
+          M3.push( i )
+        }
+
+        if( i % 5 == 0 ) {
+          M5.push( i )
+        }
+      }
+
+      return 'Multiples under 1000<br><br>[ 3 ] = ' + M3.join( ', ' ) + '<br><br>[ 5 ] = ' + M5.join( ', ' ) 
+    }
+  </script>
+</html>
