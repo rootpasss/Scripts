@@ -1,0 +1,53 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 24/03/2017, Time: 13:26:09.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Array Integers Sum, Exercise 4 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Array Integers Sum</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var size = 5 + Math.floor( Math.random() * 20 )
+    var array = []
+
+    output.innerHTML = fillArray( size ).join( ', ' )
+
+    function fillArray( top ) {
+      if( top < 0 ) {
+        return array
+      }
+
+      array.push( Math.floor( Math.random() * 40 ) )
+      return fillArray( top - 1 )
+    }
+
+    output.innerHTML += '<br>Sum = ' + arraySum( array.length - 1 )
+
+    function arraySum( i ) {
+      if( i < 0 ) {
+        return 0
+      }
+
+      return array[ i ] + arraySum( i - 1 )
+    }
+  </script>
+</html>
