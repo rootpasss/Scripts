@@ -1,0 +1,42 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 25/03/2017, Time: 02:01:04.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Exponent of Any Number, Exercise 5 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Exponent of Any Number</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var value = Math.floor( Math.random() * 15 )
+    var exp = Math.floor( Math.random() * 8 )
+
+    function getExp( x, y ) {
+      if( y == 0 ) {
+        return 1
+      }
+
+      return x * getExp( x, y - 1 )
+    }
+
+    output.innerHTML = 'Base & Exponent<br>' + value + '^ ' + exp + ' = ' + getExp( value, exp )
+  </script>
+</html>
