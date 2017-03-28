@@ -1,0 +1,49 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 27/03/2017, Time: 19:13:02.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Odd or Even, Exercise 7 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Odd or Even</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var value = Math.floor( Math.random() * 420 )
+    output.innerHTML = value + " is even? -> " + is_even_recursion( value )
+
+    function is_even_recursion( number ) {
+      if( number < 0 ) {
+        number = Math.abs(number);
+      }
+
+      if( number === 0 ) {
+        return true;    
+      }
+    
+      if( number === 1 ) {
+        return false;
+      } else {
+        number = number - 2;
+        return is_even_recursion(number);
+      }
+    }
+  </script>
+</html>
