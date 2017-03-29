@@ -1,0 +1,49 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 28/03/2017, Time: 12:03:06.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Binary Search, Exercise 8 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Binary Search</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    // Provided Solution By w3resource.com. [I dont like this crap]
+    // (!) Inestable code with infinite loop when a value doesn't exists.
+    var output = document.querySelector( '.output' )
+    
+    Array.prototype.br_search = function (target) {
+      var half = parseInt(this.length / 2);
+    
+      if( target === this[half] ) {
+        return half;
+      }
+
+      if( target > this[half] ) {
+        return half + this.slice(half,this.length).br_search(target);
+      } else{
+        return this.slice(0, half).br_search(target);
+      }
+    };
+    
+    l = [0,1,2,3,4,5,6];
+    output.innerHTML = l.br_search( 5 )
+  </script>
+</html>
