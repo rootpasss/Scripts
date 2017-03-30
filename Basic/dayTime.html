@@ -1,0 +1,50 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 30/03/2017, Time: 00:18:37.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Display Current Day and Time, Exercise 1 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Current Day and Time</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var weekDays = [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ]
+    var date = new Date()
+    var hr = date.getHours(), min = ( '0' + date.getMinutes() ).slice( -2 ), sec = ( '0' + date.getSeconds() ).slice( -2 )
+    var identifier
+
+    if( hr >= 0 && hr <= 11 ) {
+      if( hr == 0 ) {
+        hr = 12
+      }
+
+      identifier = 'AM'
+    } else {
+      if( hr > 12 ) {
+        hr -= 12
+      }
+
+      identifier = 'PM'
+    }
+
+    output.innerHTML = 'Today is ' + weekDays[ date.getDay() ] + '<br>' + hr + ' ' + identifier + ' : ' + min + ' : ' + sec
+  </script>
+</html>
