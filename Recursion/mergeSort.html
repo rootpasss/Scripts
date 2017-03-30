@@ -1,0 +1,56 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 28/03/2017, Time: 12:41:47.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Merge Sort, Exercise 9 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Merge Sort</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    // Provided solution by w3resource.com. [I dont like this crap]
+    // (!) VERY BAD solution with 'while' cycle!!
+    var output = document.querySelector( '.output' )
+    Array.prototype.merge_Sort = function () {
+      if (this.length <= 1) {
+        return this;
+      }
+
+      var half = parseInt(this.length / 2);
+      var left = this.slice(0, half).merge_Sort();
+      var right = this.slice(half,     this.length).merge_Sort();
+      var merge = function (left, right) {
+        var arry = [];
+      
+        while (left.length > 0 && right.length > 0) {
+          arry.push((left[0] <= right[0]) ? left.shift() : right.shift());
+        }
+        
+        return arry.concat(left).concat(right);
+      };
+
+      return merge(left, right);
+    };
+
+    var a = [34,7,23,32,5,62];
+
+    output.innerHTML = a.merge_Sort()
+  </script>
+</html>
