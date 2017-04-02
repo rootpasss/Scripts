@@ -1,0 +1,41 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 30/03/2017, Time: 21:01:17.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Area of Triangle, Exercise 4 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Area of Triangle</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = calculateArea()
+
+    function calculateArea() {
+      var a = 1 + Math.floor( Math.random() * 15 ) 
+      var b = 1 + Math.floor( Math.random() * 15 )
+      var c = 1 + Math.floor( Math.random() * 15 )
+      var s = ( a + b + c ) / 2
+      var area = Math.sqrt( s * ( s - a ) * ( s - b ) * ( s - c ) )
+
+      return 'Area of triangle ' + a + ', ' + b + ', ' + c + ' = ' + area
+    }
+  </script>
+</html>
