@@ -1,0 +1,51 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 30/03/2017, Time: 22:13:13.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Rotate String, Exercise 5 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Rotate String To The Right</title>
+  </head>
+  <body>
+    <input class="text" type="text" onkeyup="process()" placeholder="Any String" autofocus/><br><br>
+    <input class="rotations" type="number" onkeyup="process()" placeholder="Number of rotations to the right" style="width:220px;"/><br><br>
+    <input class="run" type="button" value="R o t a t e !!" onclick="output.innerHTML = rotate( text.value, rotations.value )"/>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var text = document.querySelector( '.text' )
+    var rotations = document.querySelector( '.rotations' )
+
+    function process() {
+      if( event.keyCode == 13 && text.value.length > 0 && rotations.value.length > 0 ) {
+        output.innerHTML = rotate( text.value, rotations.value )
+      }
+    }
+
+    function rotate( data, loops ) {
+      var aux = data
+
+      for( var i = 0; i < loops; i++ ) {
+        aux = aux.substring( aux.length - 1 ) + aux.substring( 0, aux.length - 1 )
+      }
+
+      return data + ' rotated ' + loops + ' times: ' + aux
+    }
+  </script>
+</html>
