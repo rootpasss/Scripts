@@ -1,0 +1,45 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 31/03/2017, Time: 13:01:40.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Find 1st January be a Sunday, Exercise 7 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>1st January Sunday</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = find()
+
+    function find() {
+      var result = ''
+
+      for( var i = 2014; i <= 2050; i++ ) {
+        var date = new Date( i, 0, 1 )
+
+        if( date.getDay() == 0 ) {
+          result += 'January 1st of ' + i + ' is a Sunday<br>'
+        }
+      }
+
+      return result
+    }
+  </script>
+</html>
