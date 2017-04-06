@@ -1,0 +1,39 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 31/03/2017, Time: 13:10:02.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Guess The Number, Exercise 8 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Guess The Number</title>
+  </head>
+  <body>
+    <input class="input" type="number" onkeyup="guess()" placeholder="Guess the number, 1 to 20" style="width:200px;" autofocus/>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var input = document.querySelector( '.input' )
+    var secretNumber = 1 + Math.floor( Math.random() * 10 )
+
+    function guess() {
+      if( event.keyCode == 13 && input.value.length > 0 ) {
+        output.innerHTML = input.value == secretNumber ? 'You catch the number!, ' + input.value : 'Not matched :('
+      }
+    }
+  </script>
+</html>
