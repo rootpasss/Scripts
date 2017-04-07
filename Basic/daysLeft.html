@@ -1,0 +1,41 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 31/03/2017, Time: 13:24:36.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Days Left Until Next Christmas, Exercise 9 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Days Left To Christmas</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var actualDate = new Date()
+    var christmas = new Date( actualDate.getFullYear(), 11, 25 )
+    var day = 1000 * 3600 * 24
+
+    if( actualDate.getDate() > 25 && actualDate.getMonth() == 11 ) {
+      christmas.setFullYear( christmas.getFullYear() + 1 )
+    }
+
+    var left = Math.ceil( ( christmas.getTime() - actualDate.getTime() ) / day )
+
+    output.innerHTML = actualDate.getDate() + '/' + ( actualDate.getMonth() + 1 ) + '/' + actualDate.getFullYear() + '<br>Days until next christmas: ' + left
+  </script>
+</html>
