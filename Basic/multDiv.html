@@ -1,0 +1,50 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 31/03/2017, Time: 14:04:22.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Multiply and Divide Numbers, Exercise 10 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Multiply and Divide</title>
+  </head>
+  <body>
+    <label>1st Number :</label>
+    <input class="input1" type="number" autofocus/><br>
+    <label>2nd Number:</label>
+    <input class="input2" type="number"/><br>
+    <input class="button1" type="button" value="Multiply" onclick="calculate( event )"/>
+    <input class="button2" type="button" value="Divide" onclick="calculate( event )"/><br><br>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var number1 = document.querySelector( '.input1' )
+    var number2 = document.querySelector( '.input2' )
+
+    function calculate( e ) {
+      var result
+
+      if( e.target.value == 'Multiply' ) {
+        result = number1.value * number2.value
+      } else {
+        result = number1.value / number2.value
+      }
+
+      output.innerHTML = 'The Result is:<br>' + result
+    }
+  </script>
+</html>
