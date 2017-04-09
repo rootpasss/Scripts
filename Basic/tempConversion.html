@@ -1,0 +1,41 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 31/03/2017, Time: 21:06:02.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Temperature Conversion, Exercise 11 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Temperature Conversor</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var cel = -70 + Math.floor( Math.random() * 70 )
+    var fah = -70 + Math.floor( Math.random() * 160 )
+
+    output.innerHTML = conversion( cel, fah )
+
+    function conversion( celsius, fahrenheit ) {
+      var F = celsius * 9 / 5 + 32
+      var C = ( fahrenheit - 32 ) / 1.8
+
+      return celsius + 'ºC is ' + F + 'ºF<br>' + fahrenheit + 'ºF is ' + C + 'ºC'
+    }
+  </script>
+</html>
