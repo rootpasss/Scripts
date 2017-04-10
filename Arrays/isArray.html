@@ -1,0 +1,40 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 01/04/2017, Time: 23:11:56.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Check if an Input is an Array, Exercise 1 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Is An Array?</title>
+  </head>
+  <body>
+    <h1 class="title">Is An Array?</h1>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var types = [ 'My name is...', 85, Math.random() >= 0.5, [ 1, 2, 4 ] ]
+    var title = document.querySelector( '.title' ).innerHTML += ' (' + types.join( ' | ' ) + ')'
+    var input = types[ Math.floor( Math.random() * types.length ) ]
+
+    output.innerHTML = isArray( input )
+
+    function isArray( input ) {
+      return ( typeof( input ) == 'object' ) + '<br>Received: ' + typeof( input ) + ' (' + input + ')'
+    }
+  </script>
+</html>
