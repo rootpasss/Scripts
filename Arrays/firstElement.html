@@ -1,0 +1,51 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 02/04/2017, Time: 18:26:47.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ First Array Element, Exercise 3 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>First Array Element</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    //output.innerHTML = first( [ 7, 9, 0, -2 ] )
+    output.innerHTML = first( [ 7, 9, 0, -2 ], 6 )
+
+    // INFO: Method without index show the first element on the series
+    /*function first( dataList ) {
+      return ( typeof( dataList ) == 'object' ) && ( dataList.length > 0 ) ? dataList[ 0 ] : ''
+    }*/
+
+    // INFO: Method with index show the first 'n elements
+    function first( dataList, index ) {
+      var series = []
+
+      if( typeof( dataList ) == 'object' && dataList.length > 0 ) {
+        index = index > dataList.length ? dataList.length : index
+        for( var i = 0; i < index; i++ ) {
+          series.push( dataList[ i ] )
+        }
+      }
+
+      return series
+    }
+  </script>
+</html>
