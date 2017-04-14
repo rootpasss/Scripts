@@ -1,0 +1,34 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 03/04/2017, Time: 14:11:46.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Array to String, Exercise 5 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Array to String</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var colors = [ 'Red', 'Orange', 'Silver', 'Purple', 'Cyan' ]
+    var dataString = colors.join( ' ' )
+
+    output.innerHTML = typeof( colors ) + ': ' + colors + '<br>' + typeof( dataString ) + ': ' + dataString
+  </script>
+</html>
