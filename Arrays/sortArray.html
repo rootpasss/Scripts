@@ -1,0 +1,44 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 06/04/2017, Time: 20:51:19.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Sort Array, Exercise 7 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Sort Array</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var data = randomizedArray()
+
+    output.innerHTML = 'Generated Array: ' + data + '<br>Sorted: ' + data.sort( function( x, y ) { return x - y } )
+
+    function randomizedArray() {
+      var length = 5 + Math.floor( Math.random() * 17 )
+      var dataList = []
+
+      for( var i = 0; i < length; i++ ) {
+        dataList.push( Math.floor( Math.random() * 20 ) )
+      }
+
+      return dataList
+    }
+  </script>
+</html>
