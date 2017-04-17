@@ -1,0 +1,53 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 06/04/2017, Time: 21:01:39.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Most Repeated Item, Exercise 8 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Most Repeated Item</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var data = [ 3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3 ]
+
+    output.innerHTML = getMostRepeated( data )
+
+    function getMostRepeated( dataList ) {
+      var mostRepeated = 0
+      var item = dataList[ 0 ]
+
+      for( var i = 0; i < dataList.length - 1; i++ ) {
+        var counter = 1
+
+        for( var j = i + 1; j < dataList.length; j++ ) {
+          if( dataList[ i ] == dataList[ j ] ) {
+            counter ++;
+          }
+        }
+
+        item = counter > mostRepeated ? dataList[ i ] : item
+        mostRepeated = counter > mostRepeated ? counter : mostRepeated
+      }
+
+      return 'Data: ' + dataList + '<br>' + item + ' (' + mostRepeated + ' times)'
+    }
+  </script>
+</html>
