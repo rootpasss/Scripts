@@ -1,0 +1,43 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 07/04/2017, Time: 22:32:31.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Swap Case, Exercise 9 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Swap Cases</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var input = 'The Quik Brown Fox'
+
+    output.innerHTML = 'Input: ' + input + '<br>Swap Case: ' + swapCase( input )
+
+    function swapCase( data ) {
+      var array = data.split( '' )
+
+      for( var A in array ) {
+        array[ A ] = array[ A ] == array[ A ].toLowerCase() ? array[ A ].toUpperCase() : array[ A ].toLowerCase()
+      }
+
+      return array.join( '' )
+    }
+  </script>
+</html>
