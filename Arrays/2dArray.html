@@ -1,0 +1,46 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 08/04/2017, Time: 12:06:38.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ 2D Array, Exercise 10 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>2D Array</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var array = [ [ 1, 2, 1, 24 ], [ 8, 11, 9, 4 ], [ 7, 0, 7, 27 ], [ 7, 4, 28, 14 ], [ 3, 10, 26, 7 ] ]
+    var result = ''
+
+    output.innerHTML = array + '<br>' + print( array )
+
+    function print( data ) {
+      for( var i = 0; i < data.length; i++ ) {
+        result += '\"row ' + i + '\"<br>'
+
+        for( var j = 0; j < data.length - 1; j++ ) {
+          result += '\" ' + data[ i ][ j ] + '\"<br>'
+        }
+      }
+
+      return result
+    }
+  </script>
+</html>
