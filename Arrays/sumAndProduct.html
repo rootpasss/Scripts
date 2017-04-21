@@ -1,0 +1,45 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 09/04/2017, Time: 01:37:26.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Sum And Product, Exercise 12 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Sum And Product</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = sumAndProduct()
+
+    function sumAndProduct() {
+      var randomSize = 5 + Math.floor( Math.random() * 10 )
+      var sum = 0, prod = 1
+      var dataList = []
+
+      for( var i = 0; i < randomSize; i++ ) {
+        dataList.push( Math.floor( Math.random() * 50 ) )
+        sum += dataList[ i ]
+        prod *= dataList[ i ]
+      }
+
+      return dataList + '<br>Sum = ' + sum + '<br>Product = ' + prod
+    }
+  </script>
+</html>
