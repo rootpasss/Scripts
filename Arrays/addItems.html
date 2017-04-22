@@ -1,0 +1,64 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 09/04/2017, Time: 16:23:36.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Add Items In Empty Array, Exercise 13 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Add Items</title>
+  </head>
+  <body>
+    <input class="input" onkeyup="fromText()" type="text" placeholder="Value to add" autofocus/>
+    <input type="button" onclick="fromButton()" value="Add"/>
+    <input type="button" onclick="display()" value="Display"/>
+    <label class="info" style="color: green;"></label>
+    <hr/>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var input = document.querySelector( '.input' )
+    var info = document.querySelector( '.info' )
+    var elements = []
+
+    function fromText() {
+      if( event.keyCode == 13 && input.value.length > 0 ) {
+        add()
+      }
+    }
+
+    function fromButton() {
+      if( input.value.length > 0 ) {
+        add()
+      }
+    }
+
+    function add() {
+      elements.push( input.value )
+      info.innerHTML = input.value + ' Added'
+      input.value = ''
+    }
+
+    function display() {
+      info.innerHTML = ''
+
+      for( var i = 0; i < elements.length; i++ ) {
+        output.innerHTML += 'Element ' + ( i + 1 ) + ' = ' + elements[ i ] + '<br>'
+      }
+    }
+  </script>
+</html>
