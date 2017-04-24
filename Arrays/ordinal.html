@@ -1,0 +1,45 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 09/04/2017, Time: 19:54:35.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Ordinal Output, Exercise 15 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Ordinal Output</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var colors = [ 'Blue', 'Green', 'Red', 'Orange', 'Violet', 'Indigo', 'Yellow' ]
+    var ordinals = [ 'th', 'st', 'nd', 'rd' ]
+
+    output.innerHTML = 'Colors: [' + colors.join( ' ' ) + ']<br>Ordinals: [' + ordinals.join( ' ' ) + ']<br><br>' + processOutput( colors, ordinals )
+
+    function processOutput( dataList1, dataList2 ) {
+      var order = ''
+
+      for( var i = 0; i < dataList1.length; i++ ) {
+        var pointer = ( i + 1 ) < dataList2.length ? ( i + 1 ) : 0;
+        order += ( i + 1 ) + dataList2[ pointer ] + ' Choice is ' + dataList1[ i ] + '<br>'
+      }
+
+      return order
+    }
+  </script>
+</html>
