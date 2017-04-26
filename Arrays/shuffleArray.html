@@ -1,0 +1,46 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 11/04/2017, Time: 00:01:54.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Shuffle Array, Exercise 17 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Shuffle Array</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var data = [ 1, 2, 3, 4, 5 ]
+
+    output.innerHTML = 'Original: [' + data + ']<br>Shuffle: [' + shuffle( data ) + ']'
+
+    function shuffle( dataList ) {
+      var x, y, aux
+
+      for( var i = 0; i < dataList.length; i++ ) {
+        y = i + Math.floor( Math.random() * ( dataList.length - i ) )
+        aux = dataList[ i ]
+        dataList[ i ] = dataList[ y ]
+        dataList[ y ] = aux
+      }
+
+      return dataList
+    }
+  </script>
+</html>
