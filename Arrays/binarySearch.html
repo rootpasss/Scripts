@@ -1,0 +1,76 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: Sublime Text 3 [build 3126].
+* Date: 12/04/17, Time: 00:54:49.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Binary Search, Exercise 18 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, Eclipse Public License 1.0, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Binary Search</title>
+  </head>
+  <body>
+    <h2 class="head"></h2>
+    <input class="input" type="text" onkeyup="process()" placeholder="Value to search..."/>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var title = document.querySelector( '.head' )
+    var output = document.querySelector( '.output' )
+    var input = document.querySelector( '.input' )
+    input.select()
+    var values = generateAndSort()
+
+    function process() {
+      if( event.keyCode == 13 && input.value.length > 0 ) {
+        output.innerHTML = binarySearch( values, input.value )
+      }
+    }
+
+    function generateAndSort() {
+      var randomSize = 5 + Math.floor( Math.random() * 17 )
+      var array = []
+
+      for( var i = 0; i < randomSize; i++ ) {
+        array.push( Math.floor( Math.random() * 50 ) )
+      }
+
+      return array.sort( function( x, y ) { return x - y } )
+    }
+
+    title.innerHTML = '[' + values.join( ' ' ) + ']'
+
+    function binarySearch( dataSet, dataKey ) {
+      var low = 0, mid, high = dataSet.length
+      var status = dataKey + ' not found'
+
+      while( low <= high ) {
+        mid = parseInt( low + ( high - low ) / 2 )
+
+        if( dataKey < dataSet[ mid ] ) {
+          high = mid - 1
+        } else if( dataKey > dataSet[ mid ] ) {
+          low = mid + 1
+        } else {
+          status = dataKey + ' in position ' + mid
+          break
+        }
+      }
+
+      return status
+    }
+  </script>
+</html>
