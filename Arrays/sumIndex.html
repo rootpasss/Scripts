@@ -1,0 +1,62 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 12/04/2017, Time: 20:53:05.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Sum Index, Exercise 19 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Sum Index</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    // var values1 = [ 1, 0, 2, 3, 4 ], values2 = [ 3, 5, 6, 7, 8, 13 ]
+    var values1 = randomizeArray(), values2 = randomizeArray()
+
+    function randomizeArray() {
+      var randomLength = 5 + Math.floor( Math.random() * 15 )
+      var dataSet = []
+
+      for( var i = 0; i < randomLength; i++ ) {
+        dataSet.push( Math.floor( Math.random() * 30 ) )
+      }
+
+      return dataSet
+    }
+
+    output.innerHTML = values1 + '<br>' + values2 + '<br>Sum: ' + sum( values1, values2 )
+
+    function sum( dataSet1, dataSet2 ) {
+      var length = dataSet1.length > dataSet2.length ? dataSet1.length : dataSet2.length
+      var result = []
+
+      for( var i = 0; i < length; i++ ) {
+        if( isNaN( dataSet1[ i ] ) ) {
+          result.push( dataSet2[ i ] )
+        } else if( isNaN( dataSet2[ i ] ) ) {
+          result.push( dataSet1[ i ] )
+        } else {
+          result.push( dataSet1[ i ] + dataSet2[ i ] )
+        }
+      }
+
+      return result
+    }
+  </script>
+</html>
