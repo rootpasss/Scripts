@@ -1,0 +1,48 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 13/04/2017, Time: 12:36:11.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Array Union, Exercise 22 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Array Union</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var data1 = [ 1, 2, 3 ], data2 = [ 100, 2, 1, 10 ]
+
+    output.innerHTML = data1 + '<br>' + data2 + '<br>Union: ' + union( data1, data2 )
+
+    function union( dataSet1, dataSet2 ) {
+      var dataList = dataSet1.concat( dataSet2 )
+      dataList.sort( function( x, y ) { return x - y } )
+
+      for( var i = 0; i < dataList.length - 1; i++ ) {
+        for( var j = dataList.length; j > i; j-- ) {
+          if( dataList[ i ] == dataList[ j ] ) {
+            dataList.splice( j, 1 )
+          }
+        }
+      }
+
+      return dataList
+    }
+  </script>
+</html>
