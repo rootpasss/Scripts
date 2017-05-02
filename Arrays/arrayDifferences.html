@@ -1,0 +1,51 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 14/04/2017, Time: 15:33:20.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Array Difference, Exercise 23 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Array Difference</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    // Provided Solution By w3resource.com (I dont like this crap!)
+    var output = document.querySelector( '.output' )
+    // var values1 = [ 1, 2, 3 ], values2 = [ 100, 2, 1, 10 ]
+    var values1 = [ 1, 2, 3, 4, 5 ], values2 = [ 1, [ 2 ], [ 3, [ [ 4 ] ] ], [ 5, 6 ] ]
+
+    output.innerHTML = values1 + '<br>' + values2 + '<br>Difference: ' + difference( values1, values2 )
+
+    function difference( dataList1, dataList2 ) {
+      dataList1 = dataList1.toString().split( ',' ).map( Number )
+      dataList2 = dataList2.toString().split( ',' ).map( Number )
+      var diff = []
+
+      for( var i in dataList1 ) {
+        if( dataList2.indexOf( dataList1[ i ] ) === -1 ) diff.push( dataList1[ i ] )
+      }
+      
+      for( var i in dataList2 ) {
+        if( dataList1.indexOf( dataList2[ i ] ) === -1 ) diff.push( dataList2[ i ] )
+      }
+
+      return diff.sort( ( x, y ) => x - y )
+    }
+  </script>
+</html>
