@@ -1,0 +1,43 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 14/04/2017, Time: 19:50:26.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Remove Types, Exercise 24 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Remove Types</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var types = [ NaN, 0, 15, false, -22, '', undefined, 47, null ]
+
+    output.innerHTML = types + '<br>' + removeTypes( types )
+
+    function removeTypes( dataSet ) {
+      for( var i = dataSet.length - 1; i >= 0; i-- ) {
+        if( ! dataSet[ i ] || isNaN( dataSet[ i ] ) || ( typeof( dataSet[ i ] ) == undefined ) ) {
+          dataSet.splice( i, 1 )
+        }
+      }
+
+      return dataSet
+    }
+  </script>
+</html>
