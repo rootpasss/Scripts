@@ -1,0 +1,52 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 15/04/2017, Time: 23:42:32.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Sort Array of Objects by 'Title' value, Exercise 25 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Sort Array of Objects</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var library = [
+      { author: 'Bill Gates', title: 'The Road Ahead', libraryID: 1254 },
+      { author: 'Steve Jobs', title: 'Walter Isaacson', libraryID: 4264 },
+      { author: 'Suzanne Collins', title: 'Mackingjay: The Final Book of The Hunger Games', libraryID: 3225 }
+    ]
+
+    var sorted = library.sort( compare )
+    for( var s in sorted ) {
+      output.innerHTML += sorted[ s ].author + ' ' + sorted[ s ].title + ' ' + sorted[ s ].libraryID + '<br>'
+    }
+
+    function compare( a, b ) {
+      if( a.title < b.title ) {
+        return -1
+      }
+      
+      if( a.title > b.title ) {
+        return 1
+      }
+
+      return 0
+    }
+  </script>
+</html>
