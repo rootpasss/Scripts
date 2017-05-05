@@ -1,0 +1,48 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 18/04/2017, Time: 18:52:05.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Find Values Sum, exercise 26 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Find Values Sum</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var values = [ 10, 20, 30, 40 ,50, 60, 70 ]
+    var target = 50
+
+    output.innerHTML = 'Values: ' + values + '<br>Target: ' + target + '<br>' + find( values, target )
+
+    function find( dataSet, dataKey ) {
+      for( var i = 0; i < dataSet.length - 1; i++ ) {
+        var sum = dataSet[ i ];
+
+        for( var j = i + 1; j < dataSet.length; j++ ) {
+          if( sum + dataSet[ j ] == target ) {
+            return 'Values in pos ' + ( i + 1 ) + ' and ' + ( j + 1 ) + ' = ' + target
+          }
+        }
+      }
+
+      return 'No target found'
+    }
+  </script>
+</html>
