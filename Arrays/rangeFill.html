@@ -1,0 +1,66 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 25/04/2017, Time: 00:52:24.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Numeric and Alpha Range Fill, Exercise 29 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Fill With Numeric/Alpha Range</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = rangeFill( 'Z', 'a', 2 )
+    // output.innerHTML = rangeFill( 2, -20, 2 )
+
+    function rangeFill( start, finish, jump ) {
+      var dataSet = []
+
+      switch( typeof( start ) ) {
+        case 'string':
+              start = start.toLowerCase()
+              finish = finish.toLowerCase()
+
+              if( start.charCodeAt( 0 ) > finish.charCodeAt( 0 ) ) {
+                for( var i = start.charCodeAt( 0 ); i >= finish.charCodeAt( 0 ); i -= jump ) {
+                  dataSet.push( String.fromCharCode( i ) )
+                }
+              } else {
+                for( var i = start.charCodeAt( 0 ); i <= finish.charCodeAt( 0 ); i += jump ) {
+                  dataSet.push( String.fromCharCode( i ) )
+                }
+              }
+          break
+        case 'number':
+              if( start > finish ) {
+                for( var i = start; i >= finish; i -= jump ) {
+                  dataSet.push( i )
+                }
+              } else {
+                for( var i = start; i <= finish; i += jump ) {
+                  dataSet.push( i )
+                }
+              }
+          break
+      }
+
+      return dataSet.join( ', ' )
+    }
+  </script>
+</html>
