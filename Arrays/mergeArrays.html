@@ -1,0 +1,60 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 26/04/2017, Time: 00:05:26.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Merge Arrays And Delete Duplicate, Exercise 30 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Merge Arrays And Delete Duplicate</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var data1 = randomizeArray()
+    var data2 = randomizeArray()
+
+    output.innerHTML = 'Merge Arrays: [' + data1 + '] and [' + data2 + ']<br>' + mergeArrays( data1, data2 )
+
+    function mergeArrays( dataSet1, dataSet2 ) {
+      dataSet1 = dataSet1.concat( dataSet2 )
+
+      for( var i = 0; i < dataSet1.length; i++ ) {
+        for( var j = dataSet1.length - 1; j > i; j-- ) {
+          if( dataSet1[ i ] == dataSet1[ j ] ) {
+            dataSet1.splice( i, 1 )
+            i --
+          }
+        }
+      }
+
+      return dataSet1
+    }
+
+    function randomizeArray() {
+      var randomSize = 5 + Math.floor( Math.random() * 15 )
+      var dataSet = []
+
+      for( var i = 0; i < randomSize; i++ ) {
+        dataSet.push( Math.floor( Math.random() * 20 ) )
+      }
+
+      return dataSet
+    }
+  </script>
+</html>
