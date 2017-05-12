@@ -1,0 +1,50 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 28/04/2017, Time: 21:10:41.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Empty An Array Keeping The Original, Exercise 33 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Empty An Array Keeping The Original</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var data = randomizeArray()
+    var backUp
+
+    output.innerHTML = 'Original:<br>' + data + '<br>Deleted:<br>' + emptyArray( data ) + '<br>BackUp:<br>' + backUp
+
+    function emptyArray( dataSet ) {
+      backUp = dataSet
+      return dataSet = []
+    }
+
+    function randomizeArray() {
+      var randomSize = 5 + Math.floor( Math.random() * 15 )
+      var dataSet = []
+
+      for( var i = 0; i < randomSize; i++ ) {
+        dataSet.push( Math.floor( Math.random() * 20 ) )
+      }
+
+      return dataSet
+    }
+  </script>
+</html>
