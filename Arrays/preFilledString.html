@@ -1,0 +1,46 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 01/05/2017, Time: 00:31:24.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Pre-Filled Array (String), Exercise 37 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Pre-Filled Array (String)</title>
+  </head>
+  <body>
+    <input class="inputSize" type="number" onkeyup="processFill()" placeholder="Array Size" required autofocus/>
+    <input class="inputValue" type="text" onkeyup="processFill()" placeholder="Text Value" required/>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var size = document.querySelector( '.inputSize' )
+    var key = document.querySelector( '.inputValue' )
+
+    function processFill() {
+      if( event.keyCode == 13 && isNaN( key.value ) && ( size.value.length > 0 && key.value.length > 0 ) ) {
+        var dataSet = []
+
+        for( var i = 0; i < size.value; i++ ) {
+          dataSet.push( key.value )
+        }
+
+        output.innerHTML = '[' + dataSet.join( ', ' ) + ']'
+      }
+    }
+  </script>
+</html>
