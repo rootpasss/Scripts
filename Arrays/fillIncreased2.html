@@ -1,0 +1,50 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 01/05/2017, Time: 19:59:30.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Fill Increased, Exercise 41 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Fill Increased Two Integers Range</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var value1 = -20 + Math.floor( Math.random() * 50 )
+    var value2 = -20 + Math.floor( Math.random() * 50 )
+
+    output.innerHTML = 'Start Range:<br>' + value1 + '<br>End Range:<br>' + value2 + '<br><br>Array: ' + fill( value1, value2 )
+
+    function fill( start, end ) {
+      var dataSet = []
+
+      if( start > end ) {
+        for( var i = start; i >= end; i-- ) {
+          dataSet.push( i )
+        }
+      } else {
+        for( var i = start; i <= end; i++ ) {
+          dataSet.push( i )
+        }
+      }
+
+      return dataSet
+    }
+  </script>
+</html>
