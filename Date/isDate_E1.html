@@ -1,0 +1,50 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 08/05/2017, Time: 17:10:17.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Check Wheter An Input Is Date Or Not, Exercise 1 from 3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Is Date?</title>
+    <style>
+      .input {
+        width: 250px;
+        height: 35px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <input class="input" type="text" onkeyup="check()" placeholder="Type in date..." autofocus/>
+    <h2 class="output"></h2> 
+  </body>
+  <script>
+    var input = document.querySelector( '.input' )
+    var output = document.querySelector( '.output' )
+
+    function check() {
+      if( event.keyCode == 13 && input.value.length > 0 ) {
+        output.innerHTML = isDate( new Date( input.value ) )
+        input.select()
+      }
+    }
+
+    function isDate( data ) {
+      return Object.prototype.toString.call( data ) === '[object Date]'
+    }
+  </script>
+</html>
