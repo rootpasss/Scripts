@@ -1,0 +1,45 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 19/05/2017, Time: 11:30:55.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Get Month Name, Exercise 4 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Month Name</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var randYear = 1955 + Math.floor( Math.random() * 144 )
+    var randMonth = Math.floor( Math.random() * 12 )
+    var randDay = 1 + Math.floor( Math.random() * 30 )
+    var currentDate = new Date( randYear, randMonth, randDay )
+
+    output.innerHTML = 'Random date: ' + formatDate( currentDate ) + '<br>Month name: ' + getMonthName( currentDate.getMonth() )
+
+    function getMonthName( month ) {
+      var months = [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ]
+      return months[ month ]
+    }
+
+    function formatDate( D ) {
+      return D.getDate() + '/' + ( D.getMonth() + 1 ) + '/' + D.getFullYear()
+    }
+  </script>
+</html>
