@@ -1,0 +1,59 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 19/05/2017, Time: 11:57:57.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Compare Dates, Exercise 5 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Compare Dates</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var date1 = randomizeDate()
+    var date2 = randomizeDate()
+
+    output.innerHTML = 'Random date 1: ' + formatDate( date1 ) + '<br>Random date 2: ' + formatDate( date2 ) + '<br>' + compareDates( date1, date2 )
+
+    function compareDates( D1, D2 ) {
+      if( D1 == D2 ) {
+        return 'Date1 = Date2'
+      } else if( D1 > D2 ) {
+        return 'Date1 > Date2'
+      } else {
+        return 'Date2 > Date1'
+      }
+    }
+
+    function randomizeDate() {
+      var randYear = 1955 + Math.floor( Math.random() * 144 )
+      var randMonth = 1 + Math.floor( Math.random() * 12 )
+      var randDay = 1 + Math.floor( Math.random() * 30 )
+      var randHour = Math.floor( Math.random() * 23 )
+      var randMins = Math.floor( Math.random() * 59 )
+
+      console.log( randYear + '/' + randMonth + '/' + randDay + ' ' + randHour + ':' + randMins )
+      return new Date( randYear + '/' + randMonth + '/' + randDay + ' ' + randHour + ':' + randMins )
+    }
+
+    function formatDate( D ) {
+      return D.getDate() + '/' + ( D.getMonth() + 1 ) + '/' + D.getFullYear()
+    }
+  </script>
+</html>
