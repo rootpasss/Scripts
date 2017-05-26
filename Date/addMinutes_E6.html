@@ -1,0 +1,36 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 21/05/2017, Time: 01:05:40.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Add Specified Minutes, Exercise 6 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Add Specified Minutes</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    // 30 minutes added
+    var output = document.querySelector( '.output' )
+    output.innerHTML = addMinutes( new Date(), 30 )
+
+    function addMinutes( newDate, minutes ) {
+      return new Date( newDate.getTime() + minutes * 60000 )
+    }
+  </script>
+</html>
