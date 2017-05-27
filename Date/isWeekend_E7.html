@@ -1,0 +1,39 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 22/05/2017, Time: 14:13:17.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Test Whether a Date is Weekend, Exercise 7 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Is Weekend?</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = isWeekend( 'Oct 21, 2017' )
+
+    function isWeekend( currentDate ) {
+      var months = [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ]
+      var dateAux = new Date( currentDate )
+      var format = months[ dateAux.getMonth() ] + ' ' + dateAux.getDate() + ', ' + dateAux.getFullYear()
+      
+      return dateAux.getDay() == 6 ? format + ' is Weekend!' : format + ' is a normal day :('
+    }
+  </script>
+</html>
