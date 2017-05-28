@@ -1,0 +1,39 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 22/05/2017, Time: 19:49:30.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Difference Between Dates, Exercise 8 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Difference Between Dates</title>
+  </head>
+  <body>
+    <h2 class="output"><h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = differences( new Date( '4/2/2014' ), new Date( '11/4/2014' ) )
+    // output.innerHTML = differences( new Date( '12/2/2014' ), new Date( '11/4/2014' ) )
+
+    function differences( D1, D2 ) {
+      var months = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ]
+      return 'Difference Between ' + months[ D1.getMonth() ] + '/' + D1.getDate() + '/' + D1.getFullYear() +
+          ' and ' + months[ D2.getMonth() ] + '/' + D2.getDate() + '/' + D2.getFullYear() + '<br>' +
+          Math.floor( ( Date.UTC( D2.getFullYear(), D2.getMonth(), D2.getDate() ) - Date.UTC( D1.getFullYear(), D1.getMonth(), D1.getDate() ) ) / ( 1000 * 60 * 60 * 24 ) ) + ' days'
+    }
+  </script>
+</html>
