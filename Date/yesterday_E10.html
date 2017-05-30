@@ -1,0 +1,36 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 23/05/2017, Time: 10:00:04.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Calculate 'Yesterday Day', Exercise 10 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Yesterday</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = yesterday( 'May 23, 2017' )
+
+    function yesterday( stringDate ) {
+      var D = new Date( stringDate )
+      return 'Current Date: ' + D + '<br>Yesterday: ' + new Date( D.setDate( D.getDate() - 1 ) )
+    }
+  </script>
+</html>
