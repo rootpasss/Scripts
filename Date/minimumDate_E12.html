@@ -1,0 +1,49 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 24/05/2017, Time: 22:02:34.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Get Minimum Date, Exercise 12 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Minimum Date</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var dates = [ new Date( '2015/2/1' ), new Date( '2015/2/2' ), new Date( '2015/1/3' ) ]
+
+    output.innerHTML = getMinimumDate( dates )
+
+    function getMinimumDate( dataSet ) {
+      var minimumDate = dataSet[ 0 ]
+      var result = 'Date 1: ' + formatted( dataSet[ 0 ] ) + '<br>'
+
+      for( var i = 1; i < dataSet.length; i++ ) {
+        result += 'Date ' + ( i + 1 ) + ': ' + formatted( dataSet[ i ] ) + '<br>'
+        minimumDate = dataSet[ i ] < minimumDate ? dataSet[ i ] : minimumDate
+      }
+
+      return result + '<br>Minimum Date: ' + formatted( minimumDate ) 
+    }
+
+    function formatted( D ) {
+      return D.getFullYear() + '/' + ( '0' + ( D.getMonth() + 1 ) ).slice( -2 ) + '/' + ( '0' + D.getDate() ).slice( -2 )
+    }
+  </script>
+</html>
