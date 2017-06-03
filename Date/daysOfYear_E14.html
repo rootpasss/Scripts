@@ -1,0 +1,39 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 25/05/2017, Time: 19:11:04.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Get Amount Of Days Of a Year, Exercise 14 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Days of a Year</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = daysOfYear( new Date().getFullYear() )
+
+    function daysOfYear( year ) {
+      return 'Amount of days of ' + year + ': ' + leapYear( year )
+    }
+
+    function leapYear( Y ) {
+      return Y % 4 == 0 && ( Y % 100 != 0 || Y % 400 == 0 ) ? 366 : 365
+    }
+  </script>
+</html>
