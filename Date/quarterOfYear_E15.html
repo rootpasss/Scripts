@@ -1,0 +1,35 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 25/05/2017, Time: 22:35:00.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Get Quarter Of The Year, Exercise 15 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Quarter Of The Year</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = quarterOfYear( new Date() )
+
+    function quarterOfYear( D ) {
+      return Math.ceil( ( D.getMonth() + 1 ) / 3 )
+    }
+  </script>
+</html>
