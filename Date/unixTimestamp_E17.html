@@ -1,0 +1,40 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 26/05/2017, Time: 13:01:45.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Unix Timestamp, Exercise 17 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Unix Timestamp</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = getTimestamp( 1412743274 )
+
+    function getTimestamp( T ) {
+      var D = new Date( T * 1000 )
+      var hrs = D.getHours()
+      var mins = D.getMinutes()
+      var secs = D.getSeconds()
+
+      return hrs + ':' + ( '0' + mins ).slice( -2 ) + ':' + ( '0' + secs ).slice( -2 )
+    }
+  </script>
+</html>
