@@ -1,0 +1,48 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 26/05/2017, Time: 13:10:38.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Calculate Age, Exercise 18 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Calculate Age</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var STY = 1950
+    var Y = STY + Math.floor( Math.random() * ( new Date().getFullYear() - STY ) )
+    var M = 1 + Math.floor( Math.random() * 11 )
+    var D = Math.floor( Math.random() * 7 )
+
+    output.innerHTML = calculateAge( new Date( Y, M, D ) )
+
+    function calculateAge( D ) {
+      var start = D.getFullYear()
+      var end = new Date().getFullYear()
+
+      return 'Date of birth: ' + format( D ) + '<br>Your Age: ' + ( end - start )
+    }
+
+    function format( date ) {
+      var months = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ]
+      return months[ date.getMonth() ] + '/' + date.getDate() + '/' + date.getFullYear()
+    }
+  </script>
+</html>
