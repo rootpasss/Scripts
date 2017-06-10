@@ -1,0 +1,40 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 26/05/2017, Time: 19:56:14.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Full Textual Day, Exercise 21 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Textual Day [full]</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = textualDayFull( new Date() )
+
+    function textualDayFull( D ) {
+      var days = [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ]
+      return 'Current Date: ' + format( D ) + '<br>Textual Day: ' + days[ D.getDay() ]
+    }
+
+    function format( date ) {
+      return date.getFullYear() + '/' + ( date.getMonth() + 1 ) + '/' + date.getDate()
+    }
+  </script>
+</html>
