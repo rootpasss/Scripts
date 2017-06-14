@@ -1,0 +1,40 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 27/05/2017, Time: 14:22:44.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Textual Month Representation, Exercise 25 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Textual Month</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = textualMonthFull( new Date() )
+
+    function textualMonthFull( D ) {
+      var months = [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ]
+      return 'Current Date: ' + format( D ) + '<br>Textual Month Representation: ' + months[ D.getMonth() ]
+    }
+
+    function format( date ) {
+      return date.getFullYear() + '/' + ( '0' + date.getMonth() ).slice( -2 ) + '/' + date.getDate()
+    }
+  </script>
+</html>
