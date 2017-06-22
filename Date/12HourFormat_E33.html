@@ -1,0 +1,43 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 29/05/2017, Time: 00:18:45.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ 12-Hour Format, Exercise 33 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>12-Hour Format</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = standardTime( new Date() )
+
+    function standardTime( D ) {
+      var T = 'Current Time: '
+
+      if( D.getHours() == 0 ) {
+        return T += D.getHours() - 12 * -1 + D.toTimeString().substring( 2, 8 ) + ' AM'
+      } else if( D.getHours() >= 13 ) {
+        return T += ( '0' + ( D.getHours() - 12 ) ).slice( -2 ) + D.toTimeString().substring( 2, 8 ) + ' PM'
+      } else {
+        return T += D.toTimeString().substring( 0, 8 ) + ' AM'
+      }
+    }
+  </script>
+</html>
