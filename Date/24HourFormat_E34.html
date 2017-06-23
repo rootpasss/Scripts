@@ -1,0 +1,40 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 29/05/2017, Time: 14:00:51.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ 24 Hour Format Without Leading Zeros, Exercise 34 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>24 Hour Format [without leading zeros]</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = extendedFormat( new Date() )
+
+    function extendedFormat( D ) {
+      D.setHours( 9 )
+      return 'Current Time: ' + D.toTimeString().substring( rangeStart( D ), 8 )
+    }
+
+    function rangeStart( date ) {
+      return date.toTimeString().substring( 0, 1 ) != 0 ? 0 : 1
+    }
+  </script>
+</html>
