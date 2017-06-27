@@ -1,0 +1,52 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 29/05/2017, Time: 14:31:24.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Daylights, Exercise 38 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Daylights</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = daylights( new Date() )
+
+    //  Provided solution by w3resource.com [ Idont like this crap :( ]
+    function daylights( D ) {
+      var dst = null
+
+      for( var i = 0; i < 12; i++ ) {
+        var d = new Date( D.getFullYear(), i, 1 )
+        var offset = D.getTimezoneOffset()
+
+        if( dst == null ) {
+          dst = offset
+        } else if( offset < dst ) {
+          dst = offset
+          break
+        } else if( offset > dst ) {
+          break
+        }
+      }
+
+      return ( D.getTimezoneOffset() == dst )
+    }
+  </script>
+</html>
