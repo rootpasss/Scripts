@@ -1,0 +1,40 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 29/05/2017, Time: 14:40:33.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ GTM Difference In Hours, Exercise 39 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>GMT Difference In Hours</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = GMTdiff1( new Date() )
+    output.innerHTML += GMTdiff2( new Date() )
+
+    function GMTdiff1( D ) {
+      return 'Current Date: ' + D + '<br>[method 1]  GMT Difference: ' + D.getTimezoneOffset() / 60 + ' hour(s)'
+    }
+
+    function GMTdiff2( D ) {
+      return '<br>[method 2]  GMT Difference: \"' + D.toTimeString().substring( 12, 17 ) + '\"'
+    }
+  </script>
+</html>
