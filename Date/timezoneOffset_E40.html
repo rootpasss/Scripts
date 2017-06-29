@@ -1,0 +1,35 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 29/05/2017, Time: 15:31:18.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Time Zone Offset, Exercise 40 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Time Zone Offset</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = timezoneSeconds( new Date() )
+
+    function timezoneSeconds( D ) {
+      return 'Current Date: ' + D + '<br>Timezone offset (seconds): ' + D.getTimezoneOffset() * 60
+    }
+  </script>
+</html>
