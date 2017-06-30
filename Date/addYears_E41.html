@@ -1,0 +1,38 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 29/05/2017, Time: 18:48:12.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Add Years, exercise 41 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Add Years</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = addYears( new Date(), 5 )
+
+    function addYears( D, AY ) {
+      var result = 'Current Date: ' + D.toDateString()
+      D.setFullYear( D.getFullYear() + AY )
+
+      return result + '<br>Add ' + AY + ' years: ' + D.toDateString()
+    }
+  </script>
+</html>
