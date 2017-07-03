@@ -1,0 +1,42 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 29/05/2017, Time: 20:46:32.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Minutes Difference Between 2 Times, Exercise 44 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Minutes Difference</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var time1 = new Date( 'May 29, 2017 20:58:12' )
+    var time2 = new Date( 'May 29, 2017 23:38:29' )
+
+    output.innerHTML = minutesDiff( time1, time2 )
+
+    function minutesDiff( T1, T2 ) {
+      var M1 = T1.getMinutes() + T1.getHours() * 60
+      var M2 = T2.getMinutes() + T2.getHours() * 60
+
+      return 'Time 1: ' + T1.toTimeString().substring( 0, 8 ) + '<br>Time 2: ' + T2.toTimeString().substring( 0, 8 ) + 
+             '<br>Difference: ' + ( M1 < M2 ? M2 - M1 : M1 - M2 ) + ' Minutes'
+    }
+  </script>
+</html>
