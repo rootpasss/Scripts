@@ -1,0 +1,42 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 29/05/2017, Time: 22:24:11.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Hours Difference Between 2 Times, Exercise 45 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Hours Difference</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var time1 = new Date( 'May 29, 2017 22:27:15' )
+    var time2 = new Date( 'May 30, 2017 20:00:15' )
+
+    output.innerHTML = hoursDiff( time1, time2 )
+
+    function hoursDiff( T1, T2 ) {
+      var H1 = T1.getHours() + T1.getDate() * 24
+      var H2 = T2.getHours() + T2.getDate() * 24
+
+      return 'Time 1: ' + T1 + '<br>Time 2: ' + T2 +
+             '<br>Difference: ' + ( H1 < H2 ? H2 - H1 : H1 - H2 ) + ' Hour(s)'
+    }
+  </script>
+</html>
