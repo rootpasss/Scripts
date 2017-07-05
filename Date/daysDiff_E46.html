@@ -1,0 +1,42 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 29/05/2017, Time: 23:49:56.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Days Difference Between 2 Times, Exercise 46 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Days Difference</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var time1 = new Date( 'May 29, 2017 23:51:19' )
+    var time2 = new Date( 'May 12, 2017 23:51:19' )
+
+    output.innerHTML = daysDiff( time1, time2 )
+
+    function daysDiff( T1, T2 ) {
+      var D1 = T1.getDate() + T1.getHours() / 24
+      var D2 = T2.getDate() + T2.getHours() / 24
+      var days = D1 < D2 ? D2 - D1 : D1 - D2
+
+      return 'Time 1: ' + T1 + '<br>Time 2: ' + T2 + '<br>Difference: ' + days + ' day(s)'
+    }
+  </script>
+</html>
