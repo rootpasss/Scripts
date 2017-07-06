@@ -1,0 +1,41 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 30/05/2017, Time: 13:07:14.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Weeks Difference, Exercise 47 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Weeks Difference</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var date1 = new Date( 'May 30, 2017 23:45:19' )
+    var date2 = new Date( 'May 12, 2017 2:15:43' )
+
+    output.innerHTML = weeksDiff( date1, date2 )
+
+    function weeksDiff( D1, D2 ) {
+      var weeks = ( ( D2.getTime() - D1.getTime() ) / 1000 ) / ( 3600 * 24 * 7 )
+
+      return 'Date 1: ' + D1.toDateString() + '<br>Date 2: ' + D2.toDateString() +
+      '<br>Difference: ' + Math.abs( parseInt( weeks ) ) + ' week(s)'
+    }
+  </script>
+</html>
