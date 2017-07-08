@@ -1,0 +1,41 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 30/05/2017, Time: 23:57:27.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Years Difference Between 2 Dates, Exercise 49 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Years Difference</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var date1 = new Date( 'March 14, 2012 13:54:27' )
+    var date2 = new Date( 'November 30, 2019 18:23:51' )
+
+    output.innerHTML = yearsDiff( date1, date2 )
+
+    function yearsDiff( D1, D2 ) {
+      var years = ( ( ( D2.getTime() - D1.getTime() ) / 1000 ) / ( 3600 * 24 ) ) / 365
+
+      return 'Date 1: ' + D1.toDateString() + '<br>Date 2: ' + D2.toDateString() + '<br>' +
+             'Difference: ' + Math.abs( parseInt( years ) ) + ' year(s)'
+    }
+  </script>
+</html>
