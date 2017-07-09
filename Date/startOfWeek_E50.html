@@ -1,0 +1,38 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 31/05/2017, Time: 00:08:48.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Start Of Week, Exercise 50 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Start of Week</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = startingWeek( new Date() )
+
+    function startingWeek( D ) {
+      var plus = D.getDay() == 0 ? -6 : 1
+      var start = D.getDate() - D.getDay() + plus
+
+      return 'Start of this week: ' + new Date( D.setDate( start ) ).toDateString()
+    }
+  </script>
+</html>
