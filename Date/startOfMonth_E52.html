@@ -1,0 +1,35 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 31/05/2017, Time: 00:23:20.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Start Of Month, Exercise 52 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Start of Month</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = startOfMonth( new Date() )
+
+    function startOfMonth( D ) {
+      return 'Start of this month: ' + new Date( D.getFullYear(), D.getMonth(), 1 ).toDateString()
+    }
+  </script>
+</html>
