@@ -1,0 +1,35 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 14/06/2017, Time: 23:04:42.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Is String?, Exercise 1 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Is String</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = isString( 23 )
+
+    function isString( data ) {
+      return 'Is String \'' + data + '\'?: ' + ( typeof( data ) == 'string' ? 'Yes' : 'No' )
+    }
+  </script>
+</html>
