@@ -1,0 +1,35 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 19/06/2017, Time: 21:17:56.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Is Blank, Exercise 2 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Is Blank?</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = isBlank( '' )
+
+    function isBlank( data ) {
+      return 'Is Blank \'' + data + '\'?: ' + ( data.length == 0 ? 'Yes' : 'No' )
+    }
+  </script>
+</html>
