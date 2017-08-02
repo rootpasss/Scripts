@@ -1,0 +1,42 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 28/06/2017, Time: 01:16:08.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Abbreviated Name, Exercise 5 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Abbreviated Name</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var fullName = 'Jhonny Trejos Barrios'
+    output.innerHTML = 'Full Name: ' + fullName + '<br>' + abbreviate( fullName )
+
+    function abbreviate( data ) {
+      var output = data.split( " " )
+
+      if( output.length > 1 ) {
+        return 'Abbreviated: ' + output[ 0 ] + ' ' + output[ 1 ].substring( 0, 1 ) + '.'
+      } else {
+        return 'Lastname Required!';
+      }
+    }
+  </script>
+</html>
