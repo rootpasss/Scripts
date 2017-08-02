@@ -1,0 +1,36 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 28/06/2017, Time: 22:18:19.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Hide Email Address, Exercise 6 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Hide Email Address</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = hideAddress( 'jtrejosb@live.com' )
+
+    function hideAddress( email ) {
+      var D = email.split( '@' )
+      return D[ 0 ].substring( 0, D[ 0 ].length / 2 ) + '...@' + D[ 1 ]
+    }
+  </script>
+</html>
