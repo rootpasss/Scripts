@@ -1,0 +1,35 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 30/06/2017, Time: 22:41:41.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ String Parameterize, Exercise 7 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>String Parameterize</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = paramString( 'Hello World this is JavaScript!' )
+
+    function paramString( data ) {
+      return '\'' + data.split( ' ' ).join( '-' ) + '\''
+    }
+  </script>
+</html>
