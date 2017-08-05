@@ -1,0 +1,43 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 13/07/2017, Time: 01:00:19.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Capitalize Each Word, Exercise 9 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Capitalize 1st Letter of Each Word</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    var text = 'jhonny TREjos baRRios'
+
+    output.innerHTML = 'Original String: ' + text + '<br>Capitalized: ' + capitalizeEach( text )
+
+    function capitalizeEach( data ) {
+      var D = data.split( " " )
+
+      for( var i = 0; i < D.length; i++ ) {
+        D[ i ] = D[ i ].substring( 0, 1 ).toUpperCase() + D[ i ].substring( 1 ).toLowerCase()
+      }
+
+      return D.join( " " )
+    }
+  </script>
+</html>
