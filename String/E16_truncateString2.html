@@ -1,0 +1,42 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 09/08/2017, Time: 16:07:17.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Truncate String, Exercise 16 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Truncate String</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    // output.innerHTML = truncateString( 'We are doing JS string exercises.' )
+    output.innerHTML = truncateString( 'We are doing JS string exercises.', 19, '!!' )
+
+    function truncateString( data, size, end ) {
+      if( typeof( size ) == 'undefined' && typeof( end ) == 'undefined' ) {
+        return 'Call Signature: truncateString( \'' + data + '\' )<br><br>' + data
+      } else if( typeof( end ) == 'undefined' ) {
+        return 'Call Signature: truncateString( \'' + data + ', ' + size + ' )<br><br>' + data.substring( 0, size - 3 ) + '...'
+      } else {
+        return 'Call Signature: truncateString( \'' + data + '\', ' + size + ', \'' + end + '\' )<br><br>' + data.substring( 0, size - 3 ) + end
+      }
+    }
+  </script>
+</html>
