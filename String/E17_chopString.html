@@ -1,0 +1,44 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 09/08/2017, Time: 22:05:12.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Chop String, Exercise 17 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Chop String</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = chopString( 'w3resource', 2 )
+
+    function chopString( data, chunk ) {
+      if( typeof( chunk ) == 'undefined' ) {
+        return 'Call Signature: chopString( \'' + data + '\' )<br><br>[\"' + data + '\"]'
+      } else {
+        var result = []
+        for( var i = 0; i < data.length; i += chunk ) {
+          result.push( '\"' + data.substring( i, i + chunk ) + '\"' )
+        }
+
+        return 'Call Signature: chopString( \'' + data + '\', ' + chunk + ' )<br><br>[' + result + ']'
+      }
+    }
+  </script>
+</html>
