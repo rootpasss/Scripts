@@ -1,0 +1,46 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 10/08/2017, Time: 11:26:00.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Escape HTML String, exercise 19 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Escape HTML String</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    // PROVIDED SOLUTION BY w3resource.com THIS CRAP DOESNT WORK!
+    var output = document.querySelector( '.output' )
+    output.innerHTML = escapeHTML( '<a href="javascript-string-exercise-19.php" target="_blank">' )
+
+    function escapeHTML( data ) {
+      'use strict';
+      return data.replace( /[&<>"]/g, function( tag ) {
+        var values = {
+          '&': '&',
+          '<': '<',
+          '>': '>',
+          '"': '"'
+        };
+
+        return values[ tag ] || tag;
+      } );
+    }
+  </script>
+</html>
