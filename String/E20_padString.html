@@ -1,0 +1,42 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 10/08/2017, Time: 13:32:38.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Pad String, exercise 20 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Pad String</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    // Provided Solution by w3resource. I dont like this crap
+    var output = document.querySelector( '.output' )
+    output.innerHTML = formatted( '0000', 123, 'l' )
+
+    function formatted( pad, data, pos ) {
+      if( typeof( data ) == 'undefined' ) {
+        return pad
+      } else if( pos == 'l' ) {
+        return ( pad + data ).slice( -pad.length )
+      } else {
+        return ( data + pad ).substring( 0, pad.length )
+      }
+    }
+  </script>
+</html>
