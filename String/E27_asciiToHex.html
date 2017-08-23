@@ -1,0 +1,43 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 14/08/2017, Time: 18:54:12.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Convert ASCII To Hex, Exercise 27 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Convert ASCII To Hex</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    // Provided solution by w3resource.com, I dont like this crap
+    var output = document.querySelector( '.output' )
+    output.innerHTML = asciiToHex( '12' )
+
+    function asciiToHex( data ) {
+      var dataSet = []
+
+      for( var i = 0, l = data.length; i < l; i++ ) {
+        var HEX = Number( data.charCodeAt( i ) ).toString( 16 )
+        dataSet.push( HEX )
+      }
+
+      return 'Call Signature: asciiToHex( \'' + data + '\' )<br><br>' + dataSet.join( '' )
+    }
+  </script>
+</html>
