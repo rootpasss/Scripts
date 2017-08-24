@@ -1,0 +1,43 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: VIM 7.3
+* Date: 15/08/2017, Time: 23:35:51.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Hexadecimal To ASCII, Exercise 28 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, MIT License, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8">
+    <title>Hexadecimal To ASCII</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    // Provided solution by w3resource, I dont like this crap
+    var output = document.querySelector( '.output' )
+    output.innerHTML = hexToAscii( '3132' )
+
+    function hexToAscii( data ) {
+      var hex = data.toString()
+      var str = ''
+
+      for( var n = 0; n < hex.length; n += 2 ) {
+        str += String.fromCharCode( parseInt( hex.substr( n, 2 ), 16 ) )
+      }
+
+      return 'Call Signature: hexToAscii( \'' + data + '\' )<br><br>' + str
+    }
+  </script>
+</html>
