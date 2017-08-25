@@ -1,0 +1,47 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: Sublime Text 3 [build 3126].
+* Date: 15/08/17, Time: 23:46:44.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Find Word In String, Exercise 29 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, Eclipse Public License 1.0, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8"/>
+    <title>Find Word In String</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = find( 'The quick brown fox jumps over the lazy dog', 'fox' )
+    // output.innerHTML = find( 'aa, bb, cc, dd, aa', 'aa' )
+
+    function find( dataString, keyword ) {
+      dataString = dataString.replace( /,/g, '' )
+      dataSet = dataString.split( ' ' )
+      var counter = 0
+
+      for( var i = 0; i < dataSet.length; i++ ) {
+        if( dataSet[ i ].toLowerCase() === keyword.toLowerCase() ) {
+          counter ++
+        }
+      }
+
+      return 'Call Signature: find( \'' + dataString + '\', \'' + keyword + '\' )<br><br>\'' + keyword + '\' was found ' + counter + ' times'
+    }
+  </script>
+</html>
