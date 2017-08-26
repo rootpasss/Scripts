@@ -1,0 +1,37 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: Sublime Text 3 [build 3126].
+* Date: 16/08/17, Time: 22:24:35.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ End With Specified Suffix, Exercise 30 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, Eclipse Public License 1.0, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8"/>
+    <title>End With Specified Suffix</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = findEndSuffix( 'JS PYTHON JAVA', 'JAVA' )
+
+    function findEndSuffix( data, key ) {
+      var dataSet = data.split( ' ' )
+      return 'Call Signature: findEndSuffix( \'' + data + '\', \'' + key + '\' )<br><br>' + ( dataSet[ dataSet.length - 1 ] === key )
+    }
+  </script>
+</html>
