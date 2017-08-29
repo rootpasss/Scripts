@@ -1,0 +1,39 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: Sublime Text 3 [build 3126].
+* Date: 17/08/17, Time: 22:04:58.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Remove Non-Word, Exercise 33 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, Eclipse Public License 1.0, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8"/>
+    <title>Remove Non-Word</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    var output = document.querySelector( '.output' )
+    output.innerHTML = removeNonWord( 'PHP ~!@#$%^&*()+`-={}[]|\\:";\'/?><., MySQL' )
+
+    function removeNonWord( data ) {
+      data = data.toString()
+      var pattern = /[^\x20\x2D0-9A-Z\x5Fa-z\xC0-\xD6\xD8-\xF6\xF8-\xFF]/g
+
+      return data.replace( pattern, '' )
+    }
+  </script>
+</html>
