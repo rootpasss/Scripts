@@ -1,0 +1,42 @@
+<!--
+* Engineered and developed by Jhonny Trejos Barrios.
+* Technology: Web (HTML5).
+* Version: Standard Markup.
+* Development Environment: Sublime Text 3 [build 3126].
+* Date: 18/08/17, Time: 22:19:34.
+*
+* Additional Info.
+*
+* Source Code Target Or Details:
+*
+*     [ Zero Fill, Exercise 36 from w3resource.com ]
+*
+* Licenses: GNU GPL v3.0, Eclipse Public License 1.0, Personal for non-commercial purposes.
+* Developer Contact: jtrejosb@live.com || jtrejosb@gmail.com || jtrejosb@icloud.com
+* GitHub.com/jtrejosb
+-->
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" charset="UTF-8"/>
+    <title>Zero Fill</title>
+  </head>
+  <body>
+    <h2 class="output"></h2>
+  </body>
+  <script>
+    // Provided solution by w3resource. I dont like this crap.
+    var output = document.querySelector( '.output' )
+    output.innerHTML = zeroFill( 120, 5, '-' )
+    // output.innerHTML = zeroFill( 29, 4 )
+
+    function zeroFill( value, width, osign ) {
+      var num = '' + Math.abs( value )
+      var zeros = width - num.length
+      var sign = value >= 0
+
+      return ( sign ? ( osign ? '+' : '' ) : '-' ) + Math.pow( 10, Math.max( 0, zeros ) ).toString().substring( 1 ) + num
+    }
+  </script>
+</html>
